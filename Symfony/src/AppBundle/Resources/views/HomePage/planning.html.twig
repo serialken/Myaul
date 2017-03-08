@@ -1,0 +1,31 @@
+{% block block4 %}
+    <div class="container-fluid">
+    {% if ( plannings is not empty)%}
+        <h1 class="myTitle">PLANNING</h1>
+        <div class="container" id="planningDiv">
+            <div class="row">
+            {% set i = 0 %}
+            {%  for planning in plannings %}
+                <div class="col-sm-3 col-xs-12">
+                    <img src="{{ planning.media.path }}" class="rondPlanning"  alt="{{ planning.media.title }}"/></img>
+                    <p class="planningTxt">{{  planning.description | raw}}</p>
+                </div>
+                {% set i=i+1 %}
+        {% endfor %}
+        </div>
+            <div class="container">
+                <div class="myRow">
+                    <div class="col-lg-offset-3 col-md-offset-2 col-sm-offset-1 col-lg-7 col-md-8 col-sm-10 col-xs-12 myTxtPlanning">
+                        <img class="myTrophee hidden-xs" id="floatTrophee" src="/pictures/flat-trophee.png" alt="Trophee">
+                        <p class="planningTxtTrophee col-lg-8 col-md-8 col-sm-8 col-xs-12"><span><strong><a href="{{ path('inscriptionbundle_choice') }}">INSCRIVEZ-VOUS</a></strong></span> A UN OU PLUSIEURS<br>
+                            TOURNOIS DE
+                            QUALIFICATIONS
+                            !</p>
+                        <img class="myTrophee hidden-xs" src="/pictures/flat-trophee.png" alt="Trophee">
+                    </div>
+                </div>
+            </div>
+        </div>
+    {%  endif %}
+    </div>
+{% endblock %}

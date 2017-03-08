@@ -1,0 +1,19 @@
+{% block block5 %}
+    {% if (main_visuel[4] is not empty) %}
+        <div class="container-fluid" style="background-image:url({{ main_visuel[4].path }});background-repeat: no-repeat;background-attachment: fixed;background-size: cover;width: 100%">
+    {% else %}
+        <div class="container-fluid">
+    {% endif %}
+    <h1 class="myTitleProgress">NOS PARTENAIRES</h1>
+        <div class="container" id="partnerContainer">
+            <div class="row">
+                {% for partner in partners  %}
+                    <div class="col-sm-4 col-xs-12">
+                        <a href="{{ partner.media.link }}"><img src="{{ partner.getMedia.path }}" class="logoPartner" alt="{{ partner.getMedia.title }}"/></a>
+                        {#<p class="progressP" >{{ partner.description }}</p>#}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

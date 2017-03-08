@@ -1,0 +1,59 @@
+{# 'AppBundle:CRUD:preview.html.twig #}
+
+{% extends 'SonataAdminBundle:CRUD:preview.html.twig' %}
+
+{% use 'SonataAdminBundle:CRUD:base_edit_form.html.twig' with form as parentForm %}
+
+{% import 'SonataAdminBundle:CRUD:base_edit_form_macro.html.twig' as form_helper %}
+
+{% block preview %}
+
+    {% if object.visuels is not null %}
+        <div class="row">
+            {% set visuels_length = object.visuels | length  %}
+            {% set visuels_length =  visuels_length - 1  %}
+            {% for i in 0..visuels_length %}
+            {% set path = '/pictures/'~object.visuels[i].media.file.getClientOriginalName()  %}
+            <img src="{{ path }}" style="width: 200px; height: 200px;"  alt="{{ object.visuels[i].media.file.getClientOriginalName() }}" />
+            {% endfor %}
+        </div>
+    {% endif %}
+    {{ dump(object.last_editions) }}
+
+    {#{% if object.last_editions is not null %}#}
+        {#<div class="row">#}
+            {#{% set last_editions_length = object.last_editions | length  %}#}
+            {#{% set last_editions_length =  last_editions_length - 1  %}#}
+            {#{% for i in 0..last_editions_length %}#}
+                {#{% set path = '/pictures/'~object.last_editions[i].media.file.getClientOriginalName()  %}#}
+                {#<img src="{{ path }}" style="width: 200px; height: 200px;"  alt="{{ object.visuels[i].media.file.getClientOriginalName() }}" />#}
+            {#{% endfor %}#}
+        {#</div>#}
+    {#{% endif %}#}
+
+{% endblock %}
+
+{% block templateContent %}
+    {% set picture = object %}
+    {{ parent() }}
+
+    <div class="sonata-preview-form-container">
+        {{ block('parentForm') }}
+    </div>
+
+{% endblock %}
+
+{% block formactions %}
+
+    </br>
+    <button class="btn btn-success" type="submit" name="btn_preview_approve">
+        <i class="fa fa-check"></i>
+        {{ 'btn_preview_approve'|trans({}, 'SonataAdminBundle') }}
+    </button>
+
+    <button class="btn btn-danger" type="submit" name="btn_preview_decline">
+        <i class="fa fa-times"></i>
+        {{ 'btn_preview_decline'|trans({}, 'SonataAdminBundle') }}
+    </button>
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+    {% include "AppBundle:stream:visuel.html.twig" %}
+{% endblock %}
+
+{% block block2 %}
+    {% include "AppBundle:stream:streaming.html.twig" %}
+{% endblock %}
+
+{% block block3 %}
+    {% include "AppBundle:stream:VOD.html.twig" %}
+{% endblock %}
+
+{% block block4 %}
+    {% include "AppBundle:stream:next_live.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

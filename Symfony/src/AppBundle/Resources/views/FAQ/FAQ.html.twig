@@ -1,0 +1,83 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+{% set tab = [
+    ['Qu\'est-ce que l\'ACENSI University League et qui peut y participer ?','L\'ACENSI University League est la seule compétition eSport et de développement ouverte à tous les étudiants et jeunes diplômés de France. L\'ACENSI Gaming Cup mettra aux prises les meilleurs joueurs sur Hearthstone ainsi que les meilleures équipes sur League of Legends. L\'ACENSI Dev Cup permettra aux participants de montrer qu\'ils sont les meilleurs étudiants développeurs de France grâce à une compétition portant sur les technologies Java, JavaScript, C++, C# et PHP5.<br/>Les inscriptions sont ouvertes à TOUS les étudiants et les jeunes diplômés de l\'année en cours.'],
+    ['Quel est le planning de la compétition ?','Le planning de l\'ACENSI Gaming Cup sera le suivant :<br/><br/>Inscriptions : 1er Septembre - 20 Novembre<br/>Qualifications : 3 Octobre - 21 Novembre<br/>Phase Finale ONLINE : 25 Novembre<br/>Phase Finale OFFLINE : 3 et 4 Décembre<br/><br/>Le planning de l\'ACENSI Dev Cup sera le suivant :<br/><br/>Inscriptions : 1er Septembre - 20 Novembre<br/>Phase 1 ONLINE : 24 Octobre - 13 Novembre<br/>Phase 2 ONLINE : 25 Novembre<br/>Phase 3 OFFLINE : 3 Décembre'],
+    ['Quelles sont les dates des 8 tournois de qualification eSport ?','<strong>Qualifier 1 :</strong> 3 Octobre 2016<br/><strong>Qualifier 2 :</strong> 10 Octobre 2016<br/><strong>Qualifier 3 :</strong> 17 Octobre 2016<br/><strong>Qualifier 4 :</strong> 24 Octobre<br/><strong>Qualifier 5 :</strong> 31 Octobre<br/><strong>Qualifier 6 :</strong> 7 Novembre<br/><strong>Qualifier 7 : </strong>14 Novembre<br/><strong>Qualifier 8 : </strong>21 Novembre<br/>'],
+    ['Puis-je participer à plusieurs tournois de qualification et combien sont qualifiés par round ?','Les 8 tournois de qualification sont ouverts à tous les participants.<br/> Un joueur peut choisir de s\'inscrire à un ou aux huit tournois de qualification afin d\'augmenter ses chances d\'accéder à la Phase Finale.<br/><br/>Pour League of Legends, les 4 meilleures équipes de chaque tournois de qualification sont qualifiées pour la Phase Finale ONLINE.<br/>Pour Hearthstone, les 4 meilleurs joueurs de chaque tournois de qualification sont qualifiés pour la Phase Finale ONLINE.'],
+    ['Où et quand faut-il s\'inscrire pour participer ?','Pour t\'inscrire, clique sur le bouton « inscriptions » en haut à droite de cette page ou sur l\'onglet correspondant à la compétition de ton choix.<br/><br/>Pour la Gaming Cup, tu as du 1er Septembre au 20 Novembre pour t\'inscrire.<br/>Pour la Dev Cup, tu as du 1er Septembre au 20 Novembre pour t\'inscrire.<br/><br/>C\'est gratuit ! C\'est étudiant ! Il y a beaucoup d\'argent et de cadeaux à gagner ! Ne perds plus de temps et tente ta chance dès maintenant ! !'],
+    ['Faut il avoir un bon niveau pour participer aux tournois ?','Bien sûr que non ! Des joueurs de tous niveaux viennent s\'affronter chaque année.<br/>Venez mettre un premier pas dans l\'eSport professionnel'],
+    ['Est-ce qu\'il y a des frais d\'inscriptions ?','Non, l\'ACENSI University League est un tournoi entièrement gratuit. Toutes les qualifications se passent en ligne directement depuis chez vous. En cas de qualification pour la Phase Finale OFFLINE à Paris, ACENSI prend en charge l\'ensemble de vos frais de transports. Vous avez tout à y gagner ! '],
+    ['Est-il possible de participer à la Gaming Cup et à la Dev Cup ?','Tu peux bien entendu t\'inscrire à la Dev Cup ainsi qu\'aux deux jeux de la Gaming Cup si tu t\'en sens capable !'],
+    ['Pour le tournoi League of Legends, faut-il 5 joueurs d\'une même école ?','Pas nécessairement !<br/><br/> Tu peux venir avec plusieurs de tes amis issus des quatre coins de la France. La seule condition à respecter : être étudiant ou jeune diplômé&nbsp;! '],
+    ['Peut-on retrouver les vidéos de nos matchs ?','Toutes les vidéos sont disponibles en direct ou à la demande via l\'onglet STREAMING ou sur ce <a href="'~path('appbundle_stream')~'">lien</a>.'],
+]
+%}
+
+{% block block1 %}
+    <div class="container-fluid" id="myContainer">
+        <img src="/Visuels/FAQ/VISUEL_FAQ.jpg"  alt="Visuel" id="visuelFAQ" border="0">
+    </div>
+{% set i = 0 %}
+    {% set j = 0 %}
+    <div class="container">
+        <div class="col-sm-12 col-xs-12">
+            <div class="panel-group marginTopFaq" id="accordion">
+{% for field in tab %}
+
+{% if i == 0 %}
+    <div class="panel marginBottom marginTopFaq2">
+{% else %}
+    <div class="panel marginBottom">
+ {% endif %}
+
+    {% for key,val in field %}
+        {% if key == 0 %}
+            <div>
+                <h1 class="panel-title myTitleFaq marginTopFaq">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ j }}">
+                        {{ val | upper }}
+                    </a>
+                </h1>
+            </div>
+        {% endif %}
+
+        {% if key == 1 %}
+            <div id="collapse{{ j }}" class="panel-collapse collapse">
+                <div class="panel-body ">
+
+                    <p class="faqP paddingTopFaq col-sm-10 col-xs-12">
+                        {{ val|raw }}
+                    </p>
+                </div>
+            </div>
+            {% set j = j+1 %}
+        {% endif %}
+
+    {% endfor %}
+
+    </div>
+
+
+{% set i = i+1 %}
+{% endfor %}
+            </div>
+        </div>
+    </div>
+        <div class="container">
+            <div class="col-sm-12 col-xs-12">
+                <p class="faqP paddingTop">
+                    Pour toute autre question, vous pouvez nous contacter
+                    <a href="{{ path('appbundle_contact')}}">ici</a> !
+                </p>
+            </div>
+        </div>
+
+        {% endblock %}
+
+        {% block footer %}
+        {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

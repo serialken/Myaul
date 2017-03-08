@@ -1,0 +1,29 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {{ render(controller("AppBundle:Default:header")) }}
+{% endblock %}
+
+{% block block1 %}
+    {% include "TournamentBundle:Tournament:visuel.html.twig" %}
+{% endblock %}
+
+{% block block2 %}
+    {% include "TournamentBundle:Tournament:few_word.html.twig" %}
+{% endblock %}
+
+{% block block3 %}
+    {% include "TournamentBundle:Tournament:event.html.twig" %}
+{% endblock %}
+
+{% block block4 %}
+    {% include "TournamentBundle:Tournament:last_edition.html.twig" %}
+{% endblock %}
+
+{% block block5 %}
+    {% include "TournamentBundle:Partner:partner_view.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {{ render(controller("AppBundle:Default:footer")) }}
+{% endblock %}

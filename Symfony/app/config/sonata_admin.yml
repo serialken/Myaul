@@ -1,0 +1,5 @@
+sonata_admin:
+    title: AUL v1.0
+    title_logo: Visuels/logo-aul.png
+    templates:
+        layout: AppBundle:Sonata:my_layout.html.twig

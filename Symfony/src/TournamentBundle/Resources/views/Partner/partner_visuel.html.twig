@@ -1,0 +1,8 @@
+{% block block1 %}
+    {% if mainvisuel is not empty %}
+        <div class="container-fluid" id="myContainer">
+            {#<img src="{{ mainvisuel.getMedia.path }}" id="visuelPartner" alt="{{ mainvisuel.getMedia.title }}"/></img>#}
+            <img src="/Visuels/Partner/VISUEL_PARTENAIRES.jpg" id="visuelPartner" alt="Partenaires"/></img>
+        </div>
+    {% endif %}
+{% endblock %}

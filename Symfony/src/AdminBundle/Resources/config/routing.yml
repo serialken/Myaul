@@ -1,0 +1,19 @@
+adminbundle_export_media:
+    path:      /export/media
+    defaults:  { _controller: AdminBundle:Default:exportmedia }
+
+adminbundle_export_inscription_multi:
+    path:      /export/inscription_multi
+    defaults:  { _controller: AdminBundle:Default:exportinscriptionmulti }
+
+adminbundle_export_inscription_solo:
+    path:      /export/inscription_solo
+    defaults:  { _controller: AdminBundle:Default:exportinscriptionsolo }
+
+adminbundle_export_inscription_dev:
+    path:      /export/inscription_dev
+    defaults:  { _controller: AdminBundle:Default:exportinscriptiondev }
+
+adminbundle_mail:
+    path:      /mail/{name}
+    defaults:  { _controller: AdminBundle:Default:mail }

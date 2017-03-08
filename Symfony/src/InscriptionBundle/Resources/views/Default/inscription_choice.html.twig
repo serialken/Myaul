@@ -1,0 +1,38 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+
+    <div class="container-fluid" id="myContainer">
+        <img src="/Visuels/Inscriptions/VISUEL_INSCRIPTIONS.jpg" id="visuelInscription" alt="Visuel">
+    </div>
+
+    <div class="container-fluid">
+
+    {% if ( visuels is not empty)%}
+        <div class="container" id="tournamentDiv">
+            <div class="row">
+                {%  for visuel in visuels %}
+                <div class="col-sm-4 col-xs-12">
+                    {% if visuel.type == 'Multi' %}
+                        <a href="{{ path('inscriptionbundle_multi', {'game': visuel.tournament.game }) }}"><img src="{{ visuel.media.path }}" class="tournamentRond"  alt="{{ visuel.media.title }}"/></a>
+                    {% elseif visuel.type == 'Solo' %}
+                        <a href="{{ path('inscriptionbundle_solo', {'game': visuel.tournament.game }) }}"><img src="{{ visuel.media.path }}" class="tournamentRond"  alt="{{ visuel.media.title }}"/></a>
+                    {% else %}
+                        <a href="{{ path('inscriptionbundle_dev', {'game': visuel.tournament.game }) }}"> <img src="{{ visuel.media.path }}" class="tournamentRond"  alt="{{ visuel.media.title }}"/></a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    {%  endif %}
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

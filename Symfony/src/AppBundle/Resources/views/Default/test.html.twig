@@ -1,0 +1,23 @@
+<?php
+/**
+* Mesurer le temps de chargement d'une page HTML
+*/
+
+// relever le point de départ
+$timestart=microtime(true);
+
+/**
+* Charger la page index du site Fobec.com
+*/
+file_get_contents('http://aul2016/app_dev.php/homepage');
+
+//Fin du code PHP
+$timeend=microtime(true);
+$time=$timeend-$timestart;
+
+//Afficher le temps de chargement
+$page_load_time = number_format($time, 3);
+echo "Debut du chargement: ".date("H:i:s", $timestart);
+echo "Fin de reception: ".date("H:i:s", $timeend);
+echo "Page chargee en " . $page_load_time . " sec";
+?>

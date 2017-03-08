@@ -1,0 +1,36 @@
+{% block block2 %}
+    {#<h1 class="myTitle">Contact</h1>#}
+    <div class="container" id="containerFormContactUs">
+        <div class="row">
+            <div class="formClass col-xs-12 col-lg-offset-2 col-lg-8">
+            {{ form_start(form) }}
+                {#lastname#}
+                {{ form_label(form.lastname, "NOM", {'label_attr': {'class': 'col-lg-6 col-md-6 col-sm-6 col-xs-2 col-form-label'}}) }}
+                {{ form_errors(form.lastname) }}
+                {{ form_widget(form.lastname, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Nom'}}) }}
+
+                {#firstname#}
+                {{ form_label(form.firstname, "PRÉNOM", {'label_attr': {'class': 'col-lg-6 col-md-6 col-sm-6 col-xs-2 col-form-label'}}) }}
+                {{ form_errors(form.firstname) }}
+                {{ form_widget(form.firstname, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Prénom'}}) }}
+
+                {#mail#}
+                {{ form_label(form.mail, "EMAIL", {'label_attr': {'class': 'col-lg-6 col-md-6 col-sm-6 col-xs-2 col-form-label'}}) }}
+                {{ form_errors(form.mail) }}
+                {{ form_widget(form.mail, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Email'}}) }}
+
+                {#mail#}
+                {{ form_label(form.comment, "COMMENTAIRES", {'label_attr': {'class': 'col-lg-6 col-md-6 col-sm-6 col-xs-2 col-form-label'}}) }}
+                {{ form_errors(form.comment) }}
+                {{ form_widget(form.comment, {'attr': {'cols':"50",'class': 'my-form-control2','id':"myTextArea" ,'placeholder':'Commentaires'}}) }}
+
+
+            </div>
+            <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12">
+                {{ form_widget(form.save) }}
+            </div>
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

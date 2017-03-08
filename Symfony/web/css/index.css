@@ -1,0 +1,75 @@
+/*font-family: 'Shadows Into Light', cursive;*/
+/* 1�re div avec Image d'acceuil */
+
+h1 { margin-top: 30px  !important; margin-bottom: 30px  !important; }
+
+#myContainer { width: 100% !important; padding: 0; }
+.myRow { width: 100%; margin: auto; }
+#visuelHomepage { width: 100%; margin-top: 109px; }
+
+@media (min-width: 1020px) and (max-width: 1200px) {
+    #visuelHomepage { width: 100%; margin-top: 117px; }
+}
+@media (min-width: 768px) and (max-width: 1012px) {
+    #visuelHomepage { width: 100%; margin-top: 103px; }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    #visuelHomepage { width: 100%; margin-top: 97px; }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    #visuelHomepage { width: 100%; margin-top: 97px; }
+}
+
+/* Gros titre des divs */
+.myTitle { text-align: center; color: #134E9A; font-family: 'Fredoka One', cursive; }
+.myTitle span { color: #F68525; }
+/* fin gros titre des divs */
+
+
+/*css tournois */
+.tournamentRond { float: left; width:100%; padding-bottom: 25px; }
+/* fin css tournois */
+
+
+/* css Chiffre cles */
+.myTitleKeys { text-align: center; font-family: 'Fredoka One', Impact Arial, Black; color: white; }
+#keyInfosDiv { padding: 0 0 60px 0;  }
+.pictoLogo { width:100%; }
+.myRowPlanning { text-align: center !important; }
+.pictoTxtDescription { display: inline-block; color: white; margin: 10px 0 30px 0 !important; text-align: center; font-family: 'Fredoka One', cursive; font-size: 20px; }
+/* fin Chiffre cles */
+
+
+/*css Planning */
+#planningDiv { padding: 25px 0 35px 0; }
+.rondPlanning { float: left; width:100%; }
+.myTrophee { width: 16%; }
+.planningTxtTrophee { text-align: center; float: left; padding-top: 20px; font-size: 20px; margin: 20px 0 0 0; color: #134E9A; font-family: 'Droid Sans', sans-serif; font-weight: 900; }
+.planningTxtTrophee span a { color: #F68525; }
+.planningTxtTrophee span a:hover { color: #e87c1f; }
+.planningTxtTrophee span a { text-decoration: none; }
+.myTxtPlanning { margin-top: 25px; }
+#floatTrophee { float: left; }
+.planningTxt { color: #134E9A; text-align: center; font-family: 'Fredoka One', cursive; font-size: 20px; }
+/* fin Planning */
+
+
+/* css partenaires */
+.logoPartner { float: left; width: 100%; }
+.myTitlePartner { text-align: center; font-family: 'Fredoka One', Impact Arial, Black; color: white; }
+/* fin partenaires */
+
+/* css footer */
+.footerP { color: #134E9A; text-align: center; font-family: 'Fredoka One', cursive; font-size: 19px; }
+.footerP a{ color: #134E9A;}
+.paddingTop {padding-top : 30px; }
+.paddingBottom {padding-bottom : 30px; }
+.footerApropos { color: #134E9A; text-align: justify; font-family: 'Droid Sans.', cursive; font-size: 19px; }
+.savoirPlus a {color: #F68525; text-align:left;font-family: 'Droid Sans.', cursive; font-size: 19px; text-decoration: underline; }
+.paddingTopL {padding-top : 60px; }
+.borderFooter {border-top :2px #134E9A solid; border-bottom :1px #134E9A solid; }
+.footerMentions { color: #134E9A; text-align: center; font-family: 'Droid Sans.', cursive; font-size: 19px; }
+.footerMentions a{ color: #134E9A; }
+/* fin footer */

@@ -1,0 +1,25 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+    {% include "TournamentBundle:Partner:partner_visuel.html.twig" %}
+{% endblock %}
+
+{% block block2 %}
+    {% include "TournamentBundle:Partner:partner_page.html.twig" %}
+{% endblock %}
+
+{% block block3 %}
+    {% include "TournamentBundle:Partner:partner_technique.html.twig" %}
+{% endblock %}
+
+{% block block4 %}
+    {% include "TournamentBundle:Partner:partner_media.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

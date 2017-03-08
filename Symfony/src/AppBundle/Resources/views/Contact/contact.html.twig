@@ -1,0 +1,24 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+    {% include "AppBundle:Contact:visuel.html.twig" %}
+    {%  if info is defined %}
+        <h1 class="confirmationTxt">{{ info }}</h1>
+    {% endif %}
+{% endblock %}
+
+{% block block2 %}
+    {% include "AppBundle:Contact:formulaire.html.twig" %}
+{% endblock %}
+
+{% block block3 %}
+    {% include "AppBundle:Contact:map.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

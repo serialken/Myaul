@@ -1,0 +1,26 @@
+.margin {margin-top:10px!important;}
+.marginTop{margin-top:7px!important;}
+.imgMargin { margin-left:15px!important; }
+
+.navbar-default .navbar-nav > li > a {color:#134E9A!important; font-family: 'Fredoka One', Impact, Arial Black; margin-top:5px!important; }
+.navbar-default .navbar-nav > li > a:hover {color:#F68525!important;}
+.navbar-default .navbar-nav > li > a:focus  {color:#F68525!important;}
+.navbar-default .navbar-nav > li > a:active {color:#F68525!important;}
+
+.padding {padding-top:18px!important; padding-bottom:18px!important;}
+#menuHeader{font-weight: bold!important; color:#000000!important;}
+.navbar-nav {margin:0!important;}
+header.nav > li > a {padding-right: 11px!important; padding-left: 11px!important;}
+header ul.navbar-nav{margin: 0 0 0 47px!important;}
+.dropdown-menu {min-width:100px!important; }
+.dropdown-menu li {text-align: center; }
+.share{margin-top:-20px!important;}
+.reseaux{margin-top:10px!important;width:42px!important;}
+@media (min-width: 1200px) { header .container {width: 970px!important; margin:auto;text-align: center!important;}#logo{width:142px!important;} .share{width:38px!important;padding-top:9px!important;}}
+@media screen and (max-width : 1018px){#logo{width:132px!important;} .share{width:22px!important;}.reseaux{width:22px!important;}.imgMargin { margin-top:17px!important; }.navbar-nav > li > a {font-size:16px!important;}}
+@media screen and (max-width : 1012px){#logo{width:69px!important;padding-top:14px!important;} .share{width:22px!important;padding-top:17px!important;margin-top:-20px!important;}.reseaux{width:30px!important;}.navbar-nav > li > a {font-size:13px!important;}.imgMargin { margin-top:2px!important; }}
+@media screen and (max-width : 768px){#logo{width:auto!important; padding:0!important;}.share{width:auto!important; padding:0!important; margin-top:-20px!important;}.navbar-nav > li > a {font-size:16px!important;}}
+
+@media screen and (max-width : 988px) {.navbar-nav> li > a {padding-left:7px!important; padding-right:7px!important; padding-top:8px!important; font-size:13px!important;}header ul.navbar-nav{margin: 0 0 0 20px!important;}}
+
+

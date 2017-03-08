@@ -1,0 +1,22 @@
+{% block block3 %}
+    {%   if (main_visuel[2] is not empty) %}
+        <div class="container-fluid" id="participantDiv" style="background-image: url({{ main_visuel[2].path }});background-repeat: no-repeat;background-attachment: fixed;width:100%;background-size: cover;">
+    {% else %}
+        <div class="container-fluid" id="participantDiv">
+    {% endif %}
+
+    {% if ( last_edition_medias is defined)%}
+            <h1 class="myTitleKeys">CHIFFRES CLÉS</h1>
+            <div class="container" id="keyInfosDiv">
+                <div class="row myRowPlanning">
+            {%  for last_edition_media in last_edition_medias %}
+                    <div class="col-sm-3 col-xs-12">
+                        <img src="{{ last_edition_media.media.path }}" class="pictoLogo"  alt="{{ last_edition_media.media.title }}"/></img>
+                        <p class="pictoTxtDescription">{{ last_edition_media.description | raw }}</p>
+                    </div>
+            {% endfor %}
+                </div>
+        </div>
+    {%  endif %}
+    </div>
+{% endblock %}

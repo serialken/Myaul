@@ -1,0 +1,20 @@
+{% block block4 %}
+    {% if ( editions != NULL)%}
+        {% if (main_visuel[3] is not empty) %}
+            <div class="container-fluid" style="background-image:url({{ main_visuel[3].path }});background-repeat: no-repeat;background-attachment: fixed;width=100%;background-size: cover;">
+        {% else %}
+            <div class="container-fluid">
+        {% endif %}
+            <h1 class="myTitle">RETOUR EN <span>{{ date-1 }}</span></h1>
+            <div class="container" id="fewWords">
+                <div class="row">
+            {%  for edition in editions %}
+                <div class="col-sm-4 col-xs-12">
+                    <img src="{{ edition.getMedia().path }}" class="logoPartner" alt="{{ edition.getMedia().title }}"/></img>
+                </div>
+            {% endfor %}
+                </div>
+            </div>
+    {% endif %}
+        </div>
+{% endblock %}

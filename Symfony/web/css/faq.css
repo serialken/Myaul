@@ -1,0 +1,56 @@
+﻿/*font-family: 'Shadows Into Light', cursive;*/
+
+
+/* 1ère div avec Image d'accueil */
+#myContainer { width: 100% !important; padding: 0; }
+.myRow { width: 100%; margin: auto; }
+#visuelFAQ { width: 100%; margin-top: 108px; }
+
+
+@media (min-width: 1020px) and (max-width: 1200px) {
+    #visuelFAQ { width: 100%; margin-top: 117px; }
+}
+@media (min-width: 768px) and (max-width: 1012px) {
+    #visuelFAQ { width: 100%; margin-top: 103px; }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    #visuelFAQ { width: 100%; margin-top: 97px; }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+    #visuelFAQ { width: 100%; margin-top: 97px; }
+    .panel-title > a { font-size:17px !important;}
+    .marginTopFaq{margin-top:36px !important;}
+
+}
+
+
+/* Gros titre des divs */
+.myTitle { text-align: center; color: #134E9A; font-family: 'Fredoka One', Impact, Arial Black; }
+.myTitle span { color: #F68525; }
+/* fin gros titre des divs */
+.panel-body{margin:0!important;padding:0!important;}
+.panel{border:none!important; border-radius:none!important; box-shadow:none!important;}
+.panel-title {border:none!important;}
+.panel-title > a:hover{text-decoration:none!important;}
+.panel-title > a:active{text-decoration:none!important;}
+.panel-title > a:focus{text-decoration:none!important;}
+.panel{border:none!important;}
+/*faq*/
+.faqP {color: #134E9A; text-align: justify; font-family: 'Open Sans Condensed',Helvetica, Arial, Tahoma;  font-size: 20px;}
+.myTitleFaq { text-align: left; color: #F68525!important; font-family: 'Fredoka One', Impact, Arial Black;cursor: pointer;   }
+.faqP {padding-left: 0!important;}
+.faqP a {color: #F68525; text-decoration:underline; }
+.marginTopFaq{margin-top:26px;}
+.marginTopFaq2{margin-top:86px;}
+.marginBottom{margin-bottom:20px!important;}
+h1{ font-size: 27px !important;}
+.paddingTopFaq {padding-top :20px; padding-bottom:10px; }
+
+/*FIN faq /*
+
+
+/*A propos*/
+.paddingTopS {padding-top : 20px;}
+/*FIN A Propos*/

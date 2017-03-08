@@ -1,0 +1,142 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+
+    admin.homepage:
+        class: AppBundle\Admin\HomePageAdmin
+        arguments: [~, AppBundle\Entity\HomePage, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: HomePage , label: HomePage }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.tournament:
+        class: TournamentBundle\Admin\TournamentAdmin
+        arguments: [~, TournamentBundle\Entity\Tournament,'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Tournois , label: Tournament }
+        calls:
+            - [ setTranslationDomain, [TournamentBundle]]
+
+    admin.partnerpage:
+            class: AppBundle\Admin\PartnerPageAdmin
+            arguments: [~, AppBundle\Entity\PartnerPage, 'SonataAdminBundle:CRUD']
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: Partner , label: Partner Page }
+            calls:
+                - [ setTranslationDomain, [AppBundle]]
+
+    admin.partner:
+        class: AppBundle\Admin\PartnerAdmin
+        arguments: [~, AppBundle\Entity\Partner, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Partner , label: Partner }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.streampage:
+        class: AppBundle\Admin\StreamPageAdmin
+        arguments: [~, AppBundle\Entity\StreamPage, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Stream , label: Stream Page }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.streaming:
+        class: AppBundle\Admin\StreamingAdmin
+        arguments: [~, AppBundle\Entity\Streaming, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Stream , label: Streaming }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.last_edition:
+        class: AppBundle\Admin\Last_EditionAdmin
+        arguments: [~, AppBundle\Entity\Last_edition, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: HomePage , label: Last_edition }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.planning:
+        class: AppBundle\Admin\PlanningAdmin
+        arguments: [~, AppBundle\Entity\Planning, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: HomePage , label: Planning }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.social_network:
+        class: AppBundle\Admin\Social_networkAdmin
+        arguments: [~, AppBundle\Entity\Social_network, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Réseaux Sociaux , label: Social_network }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.acensi:
+        class: AppBundle\Admin\AcensiAdmin
+        arguments: [~, AppBundle\Entity\Acensi, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: A propos de Acensi , label: Acensi }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.few_word:
+        class: TournamentBundle\Admin\Few_wordAdmin
+        arguments: [~, TournamentBundle\Entity\Few_word, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Tournois , label: Few_word }
+        calls:
+            - [ setTranslationDomain, [TournamentBundle]]
+
+    admin.event:
+        class: TournamentBundle\Admin\EventAdmin
+        arguments: [~, TournamentBundle\Entity\Event, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Tournois , label: Event }
+        calls:
+            - [ setTranslationDomain, [TournamentBundle]]
+
+    admin.edition:
+        class: TournamentBundle\Admin\EditionAdmin
+        arguments: [~, TournamentBundle\Entity\Edition, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Tournois , label: Edition }
+        calls:
+            - [ setTranslationDomain, [TournamentBundle]]
+
+    admin.visuel:
+        class: AppBundle\Admin\VisuelAdmin
+        arguments: [~, AppBundle\Entity\Visuel, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Visuel , label: Visuel }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.media:
+        class: AppBundle\Admin\MediaAdmin
+        arguments: [~, AppBundle\Entity\Media, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Media , label: Media }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]
+
+    admin.pastille:
+        class: TournamentBundle\Admin\PastilleAdmin
+        arguments: [~, TournamentBundle\Entity\Pastille, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Tournois , label: Pastille }
+        calls:
+            - [ setTranslationDomain, [TournamentBundle]]
+
+    admin.contactpage:
+        class: AppBundle\Admin\ContactPageAdmin
+        arguments: [~, AppBundle\Entity\ContactPage, 'SonataAdminBundle:CRUD']
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Contact , label: Contact Page }
+        calls:
+            - [ setTranslationDomain, [AppBundle]]

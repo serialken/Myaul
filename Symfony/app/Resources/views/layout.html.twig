@@ -1,0 +1,16 @@
+{#Include CSS#}
+{% stylesheets filter='cssrewrite, yui_css'
+'@AppBundle/Resources/css/index.css'
+'css/bootstrap.css'%}
+
+<link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+
+{% endstylesheets %}
+
+{#Include JS#}
+{#{% javascripts filter='cssrewrite, yui_js'#}
+{#'@OCPlatformBundle/Resources/public/js/main.js' %}#}
+
+{#<script type="text/javascript" src="{{ asset_url }}"></script>#}
+
+{#{% endjavascripts %}#}

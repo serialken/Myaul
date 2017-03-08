@@ -1,0 +1,12 @@
+{% block block4 %}
+<div class="container-fluid" id="TitleFullWidth">
+    <h1 class="titleRecap">PROCHAINS <span>GAME RECAP</span></h1>
+</div>
+    {% if visuels[3][0] is not empty %}
+        <div class="container-fluid" id="myContainerRecap">
+            {% if (visuels[3][0] is not null) %}
+                <img src="{{ visuels[3][0].getMedia().path }}" id="visuelRecap"  alt="{{ visuels[3][0].getMedia().title }}"/></img>
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}

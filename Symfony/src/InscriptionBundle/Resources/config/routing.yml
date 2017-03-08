@@ -1,0 +1,19 @@
+inscriptionbundle_solo:
+    path:      /inscription_solo
+    defaults:  { _controller: InscriptionBundle:Default:inscriptionsolo }
+
+inscriptionbundle_multi:
+    path:      /inscription_multi
+    defaults:  { _controller: InscriptionBundle:Default:inscriptionmulti }
+
+inscriptionbundle_dev:
+    path:      /inscription_dev
+    defaults:  { _controller: InscriptionBundle:Default:inscriptiondev }
+
+inscriptionbundle_choice:
+    path:      /inscription
+    defaults:  { _controller: InscriptionBundle:Default:inscriptionchoice }
+
+inscriptionbundle_school:
+    path:      /school
+    defaults:  { _controller: InscriptionBundle:Default:school }

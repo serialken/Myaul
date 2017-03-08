@@ -1,0 +1,23 @@
+{% block block2 %}
+    {% if ( few_words != NULL)%}
+        {% if (main_visuel[1] is not empty) %}
+            <div class="container-fluid" style="background-image:url({{ main_visuel[1].path }});background-repeat: no-repeat;background-attachment: fixed;width=100%;background-size: cover;">
+        {% else %}
+            <div class="container-fluid">
+        {% endif %}
+        <h1 class="myTitle">EN QUELQUES <span>MOTS</span></h1>
+        <div class="container" id="fewWords">
+            {%  for few_word in few_words %}
+                <div class="row" id="myRowFewWords">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <p class="fewWordsP">{{ few_word.description | raw }}</p>
+                    </div>
+                    <div>
+                        <img class="col-lg-6 col-md-6 col-sm-6 col-xs-12" src="{{ few_word.getMedia().path }}"  alt="{{ few_word.getMedia().title | upper}}">
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

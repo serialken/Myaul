@@ -1,0 +1,27 @@
+{% block block3 %}
+    {#{% if (main_visuel[1] is not null) %}#}
+        {#{% if (main_visuel[1] is not empty) %}#}
+            {#<div class="container-fluid" style="background-image:url({{ main_visuel[1].path }} no-repeat fixed);"width=100% height=100%>#}
+        {#{% else %}#}
+            {#<div class="container-fluid" id="partenairesTechniques">#}
+        {#{% endif %}#}
+{% if(partners_technique is not empty) %}
+    <div class="container-fluid pagePart">
+    <h1 class="myTitle">PARTENAIRES <span>TECHNIQUES</span></h1>
+        <div class="container-fluid" id="partenairesOfficiels">
+    {% for partner_technique in partners_technique  %}
+        <div class="row" style="background-image:url({{ partner_technique.path }}); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;" width="100%" height="100%">
+            <div class="col-sm-4 col-xs-12 verticalImage" >
+                <a href="{{ partner_technique.media.link }}">
+                    <img src="{{ partner_technique.media.path }}" class="img-responsive imgCenter Partner"  alt="{{ partner_technique.getMedia.title }}" />
+                </a>
+            </div>
+            <div class="col-sm-5 hidden-xs verticalImage">
+                <p class="partenairesP" >{{ partner_technique.description }}</p>
+            </div>
+        </div>
+    {% endfor %}
+        </div>
+    </div>
+{% endif %}
+{% endblock %}

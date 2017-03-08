@@ -1,0 +1,29 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+    {% include "AppBundle:HomePage:visuel.html.twig" %}
+{% endblock %}
+
+{% block block2 %}
+    {% include "AppBundle:HomePage:edition.html.twig" %}
+{% endblock %}
+
+{% block block3 %}
+    {% include "AppBundle:HomePage:last_edition.html.twig" %}
+{% endblock %}
+
+{% block block4 %}
+    {% include "AppBundle:HomePage:planning.html.twig" %}
+{% endblock %}
+
+{% block block5 %}
+    {% include "AppBundle:HomePage:partner.html.twig" %}
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

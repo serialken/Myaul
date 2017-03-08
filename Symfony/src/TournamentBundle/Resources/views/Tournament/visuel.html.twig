@@ -1,0 +1,11 @@
+{% block block1 %}
+    {% if (visuel is not empty) %}
+        {% if ( visuel[0].getMedia().getStatus == true )%}
+            <div class="container-fluid" id="myContainer">
+                <a href={{ visuel[0].getMedia().getLink() }}>
+                    <img src="{{ visuel[0].getMedia().getPath }}" id="visuelTournois"  alt="{{ visuel[0].getMedia().getTitle }}"/>
+                </a>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{%  extends 'AppBundle:Default:template_picture.html.twig'  %}
+
+{% block block1 %}
+    <div class="container">
+        <div class="row">
+            <h1>Ma Gallery</h1>
+            {% set i = 0  %}
+
+            {%  for picture in pictures %}
+
+
+                {% set i=i+1%}
+
+                {% set runtimeConfig = {"thumbnail": {"size": [picture.width, picture.height] }} %}
+
+                {% if (count == 4) %}
+                <div id="picture{{ i }}" class="col-lg-2 ">
+                    <h3>Image n°{{i}}</h3>
+                    <p class="text-info">{{ picture.title }}</p>
+                    <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
+                </div>
+                    {% elseif (count == 3)%}
+                        <div id="picture{{ i }}" class="col-lg-3 ">
+                            <h3>Image n°{{i}}</h3>
+                            <p class="text-info">{{ picture.title }}</p>
+                            <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
+                        </div>
+                {% else  %}
+                    <div id="picture{{ i }}" class="col-lg-5 ">
+                        <h3>Image n°{{i}}</h3>
+                        <p class="text-info">{{ picture.title }}</p>
+                        <img src="{{(picture.path)| imagine_filter('thumb_50x50', runtimeConfig)}}" class="img-rounded"  alt={{picture.title}}/></img>
+                    </div>
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+{%  endblock %}

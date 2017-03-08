@@ -1,0 +1,101 @@
+{% set cpt = game_tournament_selection | length %}
+{#Set Label for dev cup default return on the homepage#}
+{% set label ='homepage'%}
+{% for j in 0..(cpt-1) %}
+    {% if game_tournament_selection[j].isDevCup() == true %}
+        {% set label = game_tournament_selection[j].getGame()  %}
+    {% endif %}
+    {% set j=j+1 %}
+{% endfor %}
+
+{% block footer %}
+    <div class="container-fluid borderFooter paddingBottom" >
+        <div class="container paddingTop">
+            <div class="row" >
+                <div class="col-sm-4 col-xs-12">
+
+                    <p class="pictoFooter"><a href="{{ path('appbundle_homepage') }}"><img src="/Visuels/Footer/LOGO_FOOTER_ACENSI.png" alt="Acensi University League" border="0"/></a></p>
+
+                    <div class="paddingTop2">
+
+                        <ul class="nav navbar-nav marginTop">
+                            <li class="dropdown footerTitreP">
+                                <a href="#" class="dropdown-toggle navFooter" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    GAMING CUP <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    {% for j in 0..(cpt-1) %}
+                                        {% if game_tournament_selection[j].isDevCup() != true  %}
+                                        <li >
+                                            <a href="{{ path('tournamentbundle_gaming_cup', {'game':game_tournament_selection[j].game}) }}" class="txtCenter">
+                                                {{ game_tournament_selection[j].name }}
+                                            </a>
+                                        </li>
+                                        {% endif %}
+                                        {% set j=j+1 %}
+                                    {% endfor %}
+                                </ul>
+
+                            </li>
+                        </ul>
+
+                        <p class="footerTitreP"><a href="{{ path('tournamentbundle_gaming_cup', {'game':label}) }}">DEV CUP</a></p>
+                        <p class="footerTitreP"><a href="{{ path('appbundle_stream') }}">STREAMING</a></p>
+                        <p class="footerTitreP"><a href="{{ path('tournamentbundle_partner') }}">PARTENAIRES</a></p>
+                        <p class="footerTitreP"><a href="{{ path('appbundle_faq') }}" >FAQ</a></p>
+                        <p class="footerTitreP"><a href="{{ path('inscriptionbundle_choice') }}">INSCRIPTIONS</a></p>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-4 col-xs-12">
+                    <p class="footerP text-uppercase footerTitreTop">&Agrave; PROPOS DU GROUPE ACENSI</p>
+                    <p class="footerApropos">
+                        Au fait, ACENSI c'est quoi ? C'est un groupe international de Conseil et Services Numériques !
+                    </p>
+                    <p class="footerApropos">
+                        Enthousiaste de nouvelles technologies, passionn&eacute;(e) de digital, avide d'agilit&eacute; ? Intègre le r&eacute;seau des 600 co-workers ACENSI et implique-toi dans les projets IT les plus ambitieux. Transformation num&eacute;rique, Digital, Big Data, Mobilit&eacute;, Cloud, S&eacute;curit&eacute;… n'auront plus de secrets pour toi !
+                    </p>
+
+                    <p class="footerApropos">
+                        D&eacute;veloppeurs, architectes, chefs de projet, AMOA, PMO, Scrumasters, int&eacute;grateurs, ing&eacute;nieurs d'affaires... Retrouvez toutes nos offres d'emplois et de stages sur <br /><a href="http://www.acensi.fr">www.acensi.fr</a>
+                    </p>
+                    <p class="savoirPlus ext-uppercase"><a href="{{ path('appbundle_propos') }}" class="savoirPlus">EN SAVOIR PLUS</a></p>
+                </div>
+
+                <div class="col-sm-4 col-xs-12">
+                    <p class="footerP text-uppercase footerTitreTop">SUIVEZ-NOUS SUR LES <br />R&Eacute;SEAUX SOCIAUX !</p>
+                    <div class="pictoReseaux">
+                        {% if ( logo_socials is not null)%}
+                            {% set i = 1  %}
+                            {%  for logo_social in logo_socials %}
+                                {% set i=i+1%}
+                                <a href={{ logo_social.media.link }}><img  src={{ logo_social.media.path }} alt={{ logo_social.name }} border="0"  class="imgReseaux"></a>
+                            {% endfor %}
+                        {%  endif %}
+                    </div>
+                    <p class="footerP paddingTopLFooter text-uppercase">ACENSI UNIVERSITY LEAGUE <br />VOUS EST PROPOS&Eacute; PAR</p>
+                    <div class="pictoFooter">
+                        <a href="http://www.acensi.fr/"><img src="/Visuels/Footer/acensi_logo.jpg" alt="Acensi"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container paddingTop">
+        <div class="row" >
+            <div class="col-sm-4 col-xs-12">
+                <p class="footerMentions">COPYRIGHT 2016 ACENSI.<br />TOUS DROITS R&Eacute;SERV&Eacute;S</p>
+            </div>
+
+            <div class="col-sm-4 col-xs-12">
+                <p class="footerMentions"><a href="{{ path("appbundle_contact") }}">NOUS CONTACTER</a></p>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <p class="footerMentions"><a href="{{ path("appbundle_ml") }}">MENTIONS L&Eacute;GALES</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

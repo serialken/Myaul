@@ -1,0 +1,38 @@
+{% block block1 %}
+{%  for visuels in visuel %}
+    {% if (visuels.getMedia().link is empty) %}
+        {% if (visuels.block == 'block1') %}
+            <div class="container-fluid" id="myContainer">
+                <img src="{{ visuels.getMedia().path }}" id="visuelStreaming"  alt="{{ visuels.getMedia().title }} "></img>
+            </div>
+        {% endif %}
+    {% else %}
+        {% if (visuels.block == 'block1') %}
+            <div class="container-fluid" id="myContainer">
+                <iframe src={{ visuels.getMedia().link }} width="560" id="visuelHomepage" height="349" allowfullscreen></iframe>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+
+
+
+    {#{% if (medias_visuel.0.link is empty) %}#}
+        {#{% for media_visuel in medias_visuel %}#}
+            {#{% if (medias_visuel.0.path != empty) %}#}
+                {#<div class="container-fluid" id="myContainer">#}
+                    {#<img src="{{ medias_visuel.0.path }}" id="visuelHomepage"  alt="{{ medias_visuel.0.title }} "></img>#}
+                {#</div>#}
+            {#{% endif %}#}
+        {#{% endfor %}#}
+        {#{% else %}#}
+        {#{% for media_visuel in medias_visuel %}#}
+            {#{% if (visuel.0.block == 'block1') %}#}
+                {#<div class="container-fluid" id="myContainer">#}
+                    {#<iframe src={{ media_visuel.link }} width="560" id="visuelHomepage" height="349" allowfullscreen></iframe>#}
+                {#</div>#}
+            {#{% endif %}#}
+        {#{% endfor %}#}
+    {#{% endif %}#}
+{% endblock %}

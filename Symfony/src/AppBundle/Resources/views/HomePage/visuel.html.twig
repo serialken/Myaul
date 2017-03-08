@@ -1,0 +1,7 @@
+{% block block1 %}
+    {% if (main_visuel != NULL) %}
+        <div class="container-fluid" id="myContainer">
+            <a href={{ main_visuel.0.link }}><img src="{{ main_visuel.0.path }}" id="visuelHomepage"  alt="{{ main_visuel.0.title }}"/></a>
+        </div>
+    {% endif %}
+{% endblock %}

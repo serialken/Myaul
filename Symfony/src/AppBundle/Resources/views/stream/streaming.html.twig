@@ -1,0 +1,25 @@
+{% block block2 %}
+    <div class="container-fluid" id="containerFullWidth">
+
+    </div>
+     <div class="container-fluid titleStream" id="streamContainer">
+      <h1 class="">STREAMS EN COURS</h1>
+    {% for streams in stream_block2 %}
+            {% if  (streams.getMedia().status == true)%}
+                {% if (streams.block == 'block2') %}
+
+                        {% if (streams.getMedia().link is empty) %}
+                            <img src="{{ streams.getMedia().path }}" class="col-lg-6 col-md-6 col-xs-12"  alt="{{ streams.getMedia().title }}"/></img>
+                        {% else %}
+                            <iframe src="{{ streams.getMedia().link }}" frameborder="0" class="col-lg-6 col-md-6 col-xs-12 myFrame" height="500" width="500"
+                            allowfullscreen></iframe>
+                        {% endif %}
+
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+         </div>
+    </div>
+{% endblock %}
+
+{#~"&!autoload"#}

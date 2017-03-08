@@ -1,0 +1,53 @@
+#myContainer { width: 100% !important; padding: 0; }
+.myRow { width: 100%; margin: auto; }
+#visuelStreaming { width: 100%; margin-top: 109px; }
+
+
+@media (min-width: 1020px) and (max-width: 1200px) {
+    #visuelStreaming { width: 100%; margin-top: 117px; }
+}
+@media (min-width: 768px) and (max-width: 1012px) {
+    #visuelStreaming { width: 100%; margin-top: 103px; }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+    #visuelStreaming { width: 100%; margin-top: 97px; }
+}
+
+@media (min-width: 320px) and (max-width: 425px) {
+    #visuelStreaming { width: 100%; margin-top: 97px; }
+}
+
+/* Gros titre des divs */
+.myTitle { text-align: center; color: #134E9A; font-family: 'Fredoka One', Impact Arial, Black; }
+.myTitle span { color: #F68525; }
+/* fin gros titre des divs */
+
+#containerFullWidth { width: 100%;  padding: 0 !important; margin: 0 !important;}
+
+.titleStream { text-align: center; font-family: 'Fredoka One', Impact Arial, Black; background-color: #F68525; color: white; padding: 15px; margin: 0 !important; width: 100%; }
+
+
+#streamContainer { width: 100%;  padding: 0 !important;height: 100%; margin: 0 !important;}
+.imgCarac { margin-top: 40px !important; }
+
+
+.myTitleVideo { text-align: center; font-family: 'Fredoka One', Impact Arial, Black; color: white; padding: 25px 0 45px 0; }
+.myIframe { float: left; width:100%; border: 3px solid #F68525; margin: 0 0 10px 0; }
+.videoYoutube { text-align: center; font-size: 21px; color: white; font-family: 'Open Sans condensed',Helvetica, Arial, Tahoma; font-weight: 600; padding: 35px 0 0 0; }
+.videoYoutube span a { color: #F68525; }
+.myFrame { padding: 0 !important; }
+
+@media (max-width: 320px)  {
+    .myFrame { width: 100%; height: 200px; }
+}
+
+
+
+
+.TitleFullWidth { width: 100%;  padding: 0 !important; }
+.titleRecap { text-align: center; color: #134E9A; font-family: 'Fredoka One', Impact Arial, Black; }
+.titleRecap span { color: #F68525; }
+#myContainerRecap { width: 100% !important; padding: 0; }
+#visuelRecap { width: 100%; padding: 0 0 0 0; }
+

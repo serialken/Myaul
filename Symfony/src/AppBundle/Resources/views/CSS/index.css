@@ -1,0 +1,43 @@
+/*font-family: 'Shadows Into Light', cursive;*/
+/* 1ère div avec Image d'acceuil */
+
+
+#myContainer { width: 100% !important; padding: 0; }
+.myRow { width: 100%; margin: auto; }
+#visuelHomepage { width: 100%; padding: 51px 0 0 0; }
+
+
+/* Gros titre des divs */
+.myTitle { text-align: center; color: #134E9A; font-family: 'Fredoka One', cursive; }
+.myTitle span { color: #F68525; }
+/* fin gros titre des divs */
+
+
+/*css tournois */
+#tournamentDiv { padding: 25px 0 45px 0; }
+.tournamentRond { float: left; width:100%; }
+/* fin css tournois */
+
+
+/* css Chiffre cles */
+#participantDiv { background: url("../img/texture-chiffres.jpg") no-repeat fixed; background-size: cover;}
+#keyInfosDiv { padding: 25px 0 50px 0; }
+.pictoLogo { float: left; width:100%; }
+.pictoP { color: white; text-align: center; font-family: 'Fredoka One', cursive; font-size: 20px; }
+/* fin Chiffre cles */
+
+
+/*css Planning */
+#planningDiv { padding: 25px 0 35px 0; }
+.rondPlanning { float: left; width:100%; }
+.myTrophee { width: 16%; }
+.planningP { text-align: center; float: left; font-size: 20px; margin: 20px 0 0 0; color: #134E9A; font-family: 'Droid Sans', sans-serif; }
+.planningP span { color: #F68525; }
+#floatTrophee { float: left; }
+/* fin Planning */
+
+
+/* css partenaires */
+#partnerDiv { background: url("../img/PARTEAIRES_BACKGROUND.jpg") no-repeat fixed; background-size: cover; }
+.logoPartner { float: left; width: 100%; }
+/* fin partenaires */

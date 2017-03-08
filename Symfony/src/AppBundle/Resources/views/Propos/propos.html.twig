@@ -1,0 +1,43 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+<div class="container-fluid" id="myContainer">
+    <img src="/Visuels/Propos/VISUEL_APROPOS.jpg" id="visuelAPropos" alt="Visuel" border="0">
+</div>
+
+<div class="container-fluid  paddingTopPropos" >
+    <div class="container">
+        <div class="col-sm-12 col-xs-12 imgCenter">
+            <a href="http://www.acensi.fr/"> <img src="/pictures/acensi_logo.jpg" id="AcensiLogo" alt="Visuel" border="0"></a>
+        </div>
+        <div class="col-sm-12 col-xs-12">
+            <p class="proposP paddingTopPropos">
+                Créé en 2003, le <span>Groupe ACENSI</span>
+                emploie près de 600 collaborateurs en France comme &agrave; l'International .
+            </p>
+            <p class="proposP paddingTopS">
+                ACENSI accompagne ses clients (TF1, Soci&eacute;t&eacute; G&eacute;n&eacute;rale,
+                GDF Suez, NRJ, la Francaise des jeux...)
+                dans leurs projets de transformation, depuis la définition des processus et l'analyse
+                des besoins jusqu'au d&eacute;veloppement et &agrave; la maintenance de leur
+                syst&egrave;me d'information.
+            </p>
+            <p class="proposP paddingTopS">
+                <span>ACENSI</span> embauche chaque année plus de 100 jeunes dipl&ocirc;m&eacute;s.
+                Rejoignez nos &eacute;quipes et valorisez votre potentiel...
+            </p>
+            <p class="proposP paddingTopPropos">
+                Plus d'informations sur : <a href="http://www.acensi.fr/">www.acensi.fr</a>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}

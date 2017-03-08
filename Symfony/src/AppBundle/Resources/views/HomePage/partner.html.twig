@@ -1,0 +1,22 @@
+{% block block5 %}
+    {%   if (main_visuel[4] is not null) %}
+        <div class="container-fluid" id="partnerDiv" style="background-image: url({{ main_visuel[4].path }});background-repeat: no-repeat;background-attachment: fixed;width:100%;
+            background-size: cover;">
+    {% else %}
+        <div class="container-fluid" id="partnerDiv">
+    {% endif %}
+
+    {% if ( partners is defined)%}
+        <h1 class="myTitleKeys">NOS PARTENAIRES</h1>
+        <div class="container" id="partnerContainer">
+            <div class="row">
+                {%  for partner in partners %}
+                    <div class="col-sm-4 col-xs-12">
+                        <a href="{{ partner.media.link }}"><img src="{{ partner.media.path }}" class="logoPartner"  alt="{{ partner.media.title }} " ></a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

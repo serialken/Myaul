@@ -1,0 +1,13 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block side_bar_after_nav %}
+    <a href="{{ path('fos_user_security_logout') }}"style=" padding-left: 70px ">Déconnexion</a>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/admin/app/social_network/list"}} rel="noreferrer" target="_blank">Social Network</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/admin/app/streampage/list"}} rel="noreferrer" target="_blank">Stream Page</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/admin/app/partnerpage/list"}} rel="noreferrer" target="_blank">Partner Page</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/admin/app/homepage/list"}} rel="noreferrer" target="_blank">Home Page</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/admin/tournament/tournament/list"}} rel="noreferrer" target="_blank">Tournament</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/export/inscription_multi"}} target="_blank">Export Inscription Multi</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/export/inscription_solo"}} target="_blank">Export Inscription Solo</a></p>
+    <p class="text-center small" style="border-top: 1px solid #444444; padding-top: 10px"><a href={{ aulurl~"/export/inscription_dev"}} target="_blank">Export Inscription Dev</a></p>
+{% endblock %}

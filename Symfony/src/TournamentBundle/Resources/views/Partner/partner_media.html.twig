@@ -1,0 +1,32 @@
+{% block block4 %}
+    {#{% if (main_visuel[2] is not null) %}#}
+        {#<div class="container-fluid">#}
+        {#<h1 class="myTitle">PARTENAIRES MEDIA</h1>#}
+        {#</div>#}
+        {#{% if (main_visuel[2] is not empty) %}#}
+            {#<div class="container-fluid" style="background-image:url({{ main_visuel[2].path }} no-repeat fixed);"width=100% height=100%>#}
+        {#{% else %}#}
+            {#<div class="container-fluid" id="partenairesMedia">#}
+        {#{% endif %}#}
+
+    {% if(partners_media is not empty) %}
+        <div class="container-fluid pagePart">
+            <h1 class="myTitle">PARTENAIRES <span>M&Eacute;DIAS</span></h1>
+            <div class="container-fluid" id="partenairesOfficiels">
+
+                {% for partner_media in partners_media  %}
+                    <div class="row" style="background-image:url({{ partner_media.path }}); background-repeat: no-repeat; background-attachment: fixed; background-size: cover;" width="100%" height="100%">
+                        <div class="col-sm-4 col-xs-12 verticalImage">
+                            <a href="{{ partner_media.media.link }}">
+                                <img src="{{ partner_media.media.path }}"  class="img-responsive imgCenter"alt="{{ partner_media.getMedia.title }}"/>
+                            </a>
+                        </div>
+                        <div class="col-sm-5 hidden-xs verticalImage" >
+                            <p class="partenairesP" style="margin:auto; width:100%; " >{{ partner_media.description }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% block block3 %}
+    {% if visuels[2] is not empty %}
+    <div class="container-fluid" style="background-image:url({{ visuels[2][0].getMedia().getPath() }});background-repeat: no-repeat;width:100%;background-size: cover;
+    background-attachment: fixed;">
+    {% else %}
+        <div class="container-fluid">
+    {% endif %}
+        <h1 class="myTitleVideo">RETROUVEZ TOUTES NOS VIDEOS</h1>
+        <div class="container" id="keyInfosDiv">
+                <div class="row">
+                {% for streams in stream_block3 %}
+                    {% if  (streams.getMedia().status == true)%}
+                        {% if (streams.block == 'block3') %}
+                            <div class="col-sm-3 col-xs-12">
+                            {% if (streams.getMedia().link is empty) %}
+                                <img src="{{ streams.getMedia().path }}" style="width: 80%; height: 800px; margin-left: 5%"  alt="{{ streams.getMedia().title }}"/></img>
+                            {% else %}
+                                <iframe class="myIframe" src={{ streams.getMedia().link~"&!autoload" }} frameborder="0" allowfullscreen scrolling="no"></iframe>
+                            {% endif %}
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <p class="videoYoutube">POUR PLUS DE VIDEOS, RETROUVEZ-NOUS SUR <span><a href="http://www.dailymotion.com/acensiul">DAILYMOTION</a></span></p>
+        </div>
+    </div>
+{% endblock %}

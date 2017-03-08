@@ -1,0 +1,24 @@
+{% block block2 %}
+    {% if (main_visuel[1] is not null) %}
+        {% set url = main_visuel[1].path %}
+    {% else %}
+        {% set url = "" %}
+    {% endif %}
+    <div class="container-fluid" style="background-image: url({{ url }});background-repeat: no-repeat;background-attachment: fixed;width:100%;background-size: cover;">
+
+    {% if ( visuels is not empty)%}
+            <h1 class="myTitle">TOURNOIS <span>{{ date }}</span></h1>
+            <div class="container" id="tournamentDiv">
+                <div class="row">
+                {% set cpt=0 %}
+                {%  for visuel in visuels %}
+                    <div class="col-sm-4 col-xs-12">
+                        <a href="{{ path('tournamentbundle_gaming_cup', {"game":visuel.tournament.game}) }}"><img src="{{ visuel.media.path }}" class="tournamentRond"  alt="{{ visuel.media.title }}"/></a>
+                    </div>
+                    {% set cpt=cpt+1 %}
+                {% endfor %}
+                </div>
+        </div>
+    {%  endif %}
+    </div>
+{% endblock %}

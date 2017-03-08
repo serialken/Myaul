@@ -1,0 +1,7 @@
+tournamentbundle_gaming_cup:
+    path:      /gamingcup/{game}
+    defaults:  { _controller: TournamentBundle:Default:tournament }
+
+tournamentbundle_partner:
+    path:      /partner
+    defaults:  { _controller: TournamentBundle:Default:partner }

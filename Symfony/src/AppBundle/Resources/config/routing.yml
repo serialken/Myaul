@@ -1,0 +1,73 @@
+appbundle_homepage:
+    path:      /homepage
+    defaults:  { _controller: AppBundle:Default:homepage }
+
+appbundle_header:
+    path:      /header
+    defaults:  { _controller: AppBundle:Default:header }
+
+appbundle_visuel:
+    path:      /visuel
+    defaults:  { _controller: AppBundle:Default:visuel }
+
+appbundle_edition:
+    path:      /edition
+    defaults:  { _controller: AppBundle:Default:edition }
+
+appbundle_last_edition:
+    path:      /last_edition
+    defaults:  { _controller: AppBundle:Default:last_edition }
+
+appbundle_planning:
+    path:      /planning
+    defaults:  { _controller: AppBundle:Default:planning }
+
+appbundle_partner:
+    path:      /home_page/partner
+    defaults:  { _controller: AppBundle:Default:partner }
+
+appbundle_stream:
+    path:      /stream
+    defaults:  { _controller: AppBundle:Default:stream }
+
+appbundle_footer:
+    path:      /footer
+    defaults:  { _controller: AppBundle:Default:footer }
+
+appbundle_footer_link1:
+    path:      /footer/link1
+    defaults:  { _controller: AppBundle:Default:footerlink1 }
+
+appbundle_footer_link2:
+    path:      /footer/link2
+    defaults:  { _controller: AppBundle:Default:footerlink2 }
+
+appbundle_footer_link3:
+    path:      /footer/link3
+    defaults:  { _controller: AppBundle:Default:footerlink3 }
+
+appbundle_last_edition:
+    path:      add/last_edition
+    defaults:  { _controller: AppBundle:Add:last_edition }
+
+appbundle_faq:
+    path:      /FAQ
+    defaults:  { _controller: AppBundle:Default:faq }
+
+appbundle_stream:
+    path:      /stream
+    defaults:  { _controller: AppBundle:Default:stream }
+
+appbundle_ml:
+    path:      /ml
+    defaults:  { _controller: AppBundle:Default:ml }
+
+appbundle_propos:
+    path:      /propos
+    defaults:  { _controller: AppBundle:Default:propos }
+
+appbundle_contact:
+    path:      /contact
+    defaults:  { _controller: AppBundle:Default:contact }
+
+

@@ -1,0 +1,158 @@
+{%  extends 'AppBundle:Template:template_picture.html.twig'  %}
+
+{% block header %}
+    {% render(controller("AppBundle:Default:header")) %}
+{% endblock %}
+
+{% block block1 %}
+    <div class="container-fluid" id="myContainer">
+        {%  if visuel is defined %}
+            {% for visuels in visuel %}
+                <img src="{{ visuels.getMedia().getpath }}" id="visuelFormulaire" alt="Visuel">
+            {% endfor %}
+        {% endif %}
+
+    </div>
+
+    <div class="container-fluid" id="containerFullWidth">
+        {#<h3 class="titleStream">Le capitaine de l'equipe doit s'inscrire en premier pour enregistrer le nom de l'equipe</h3>#}
+        {%  if app.request.query.get('message') is defined %}
+            <h1 class="confirmationTxt">{{ app.request.query.get('message') }}</h1>
+        {% endif %}
+    </div>
+
+    <div class="container" id="containerForm">
+        <div class="row">
+            {% set currentDate = "now"|date("m/d/Y")  %}
+            {{ form_start(form) }}
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                {#last_name#}
+                {{ form_label(form.lastName, "NOM") }}
+                {{ form_errors(form.lastName) }}
+                {{ form_widget(form.lastName, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Nom'}}) }}
+
+                {#first_name#}
+                {{ form_label(form.firstName, "PRÉNOM") }}
+                {{ form_errors(form.firstName) }}
+                {{ form_widget(form.firstName, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Prénom'}}) }}
+
+                {#birth_day#}
+                {{ form_label(form.birthDay, "DATE DE NAISSANCE",{value : "now"|date("d/m/Y")}) }}
+                {{ form_errors(form.birthDay) }}
+                {{ form_widget(form.birthDay, {'attr': {'class': 'my-form-control','type':'date','placeholder':'Date de naissance'}}) }}
+
+                {#mail#}
+                {{ form_label(form.mail, "EMAIL") }}
+                {{ form_errors(form.mail) }}
+                {{ form_widget(form.mail, {'attr': {'class': 'my-form-control','type':'email','placeholder':'Email'}}) }}
+
+                {#phone_number#}
+                {{ form_label(form.phoneNumber, "TÉLÉPHONE") }}
+                {{ form_errors(form.phoneNumber) }}
+                {{ form_widget(form.phoneNumber, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Téléphone'}}) }}
+
+                {#nickname#}
+                {{ form_label(form.nickname, "PSEUDO") }}
+                {{ form_errors(form.nickname) }}
+                {{ form_widget(form.nickname, {'attr': {'class': 'my-form-control','type':'email','placeholder':'Pseudo'}}) }}
+
+                {#lastrankjuillet#}
+                {{ form_label(form.lastRankJuillet, "RANKING JUILLET") }}
+                {{ form_errors(form.lastRankJuillet) }}
+                {{ form_widget(form.lastRankJuillet, {'attr': {'class': 'my-form-control','type':'email','placeholder':'Ranking Juillet'}}) }}
+
+                {#lastrankaout#}
+                {{ form_label(form.lastRankAout, "RANKING AOÛT") }}
+                {{ form_errors(form.lastRankAout) }}
+                {{ form_widget(form.lastRankAout, {'attr': {'class': 'my-form-control','type':'email','placeholder':'Ranking Août'}}) }}
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+
+                {#school#}
+                {{ form_label(form.School, "ÉCOLE") }}
+                {{ form_errors(form.School) }}
+                {{ form_widget(form.School, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Nom de l\'école'}}) }}
+
+                {#degreeDate#}
+                {{ form_label(form.degreeDate, "DATE D\'OBTENTION DU DIPLÔME",{value : "now"|date("d/m/Y")}) }}
+                {{ form_errors(form.degreeDate) }}
+                {{ form_widget(form.degreeDate, {'attr': {'class': 'my-form-control','type':'date','placeholder':'Date de l\'obtention du diplôme'}}) }}
+
+                {#major#}
+                {{ form_label(form.major, "FILIÈRE") }}
+                {{ form_errors(form.major) }}
+                {{ form_widget(form.major, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Filière/Spécialisation'}}) }}
+
+                {#known#}
+                {{ form_label(form.known, "CONNAISSEZ-VOUS L'ENTREPRISE ACENSI ?", {'label_attr': {'class': 'col-lg-12 col-md-12 col-sm-12 col-xs-12 col-form-label',
+                    'style':"padding-left: 0;"}}) }}
+                {{ form_errors(form.known) }}
+                {% for choiceFormView in form.known %}
+                    {% if choiceFormView.vars.label == 'Non'  %}
+                        {{ form_widget(choiceFormView,{'attr': {'type':"radio", 'id':"buttonNo", 'class':"myRadioInput", 'checked name':"optradio", 'style':"float: left;", 'value':"false", "onclick":"hideMe()"}}) }}
+                        <p class="spanNo">&nbsp;{{ choiceFormView.vars.label }}</p>
+                        <br><br>
+                    {% else %}
+                        {{ form_widget(choiceFormView,{'attr': {'type':"radio", 'id':"buttonYes", 'class':"myRadioInput", 'name':"optradio", 'style':"float: left;", 'value':"true", "onclick":"showMe()"}}) }}
+                        <p class="spanYes">&nbsp;{{ choiceFormView.vars.label }}</p>
+                        <br><br>
+                    {% endif %}
+                {% endfor %}
+
+                <div class="dropdown" id="myDiv">
+                    {#mean#}
+                    {{ form_label(form.mean, "Par quel moyen ?", {'label_attr': {'class': 'col-lg-6 col-md-6 col-sm-6 col-xs-12 col-form-label'}}) }}
+                    {{ form_errors(form.mean) }}
+                    {{ form_widget(form.mean, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Par quel moyen ?'}}) }}
+                </div>
+
+                {#think#}
+                {{ form_label(form.think, "PENSEZ-VOUS STREAMER VOS PARTIES ?", {'label_attr': {'class': 'col-lg-12 col-md-12 col-sm-12 col-xs-12 col-form-label',
+                    'style':"padding-left: 0;"}}) }}
+                {{ form_errors(form.think) }}
+                {% for choiceFormView in form.think %}
+                    {% if choiceFormView.vars.label == 'Non'  %}
+                        {{ form_widget(choiceFormView,{'attr': {'type':"radio", 'class':"myRadioInput", 'checked name':"optradio2", 'style':"float: left;"}}) }}
+                        <p class="spanNo">&nbsp;{{ choiceFormView.vars.label }}</p>
+                        <br><br>
+                    {% elseif choiceFormView.vars.label == 'Oui'  %}
+                        {{ form_widget(choiceFormView,{'attr': {'type':"radio", 'class':"myRadioInput", 'checked name':"optradio2", 'style':"float: left;"}}) }}
+                        <p class="spanNo">&nbsp;{{ choiceFormView.vars.label }}</p>
+                        <br><br>
+                    {% else %}
+                        {{ form_widget(choiceFormView,{'attr': {'type':"radio", 'class':"myRadioInput", 'name':"optradio2", 'style':"float: left;"}}) }}
+                        <p class="spanYes">&nbsp;{{ choiceFormView.vars.label }}</p>
+                        <br><br>
+                    {% endif %}
+                {% endfor %}
+
+
+
+                {#mean#}
+                {{ form_label(form.gameUser, "BATTLE TAG") }}
+                {{ form_errors(form.gameUser) }}
+                {{ form_widget(form.gameUser, {'attr': {'class': 'my-form-control','type':'text','placeholder':'Battle Tag'}}) }}
+
+            </div>
+            <div class="col-lg-offset-1 col-lg-6 col-md-offset-1 col-md-6 col-sm-offset-1 col-sm-6 col-xs-offset-1 col-xs-6">
+                {{ form_widget(form.save) }}
+            </div>
+            {{ form_rest(form) }}
+            {{ form_end(form) }}
+        </div>
+        <p class="mandatoryTxt">Tous les champs sont obligatoires. Pour toutes questions relatives aux données collectées, veuillez consulter nos <a href="{{ path("appbundle_ml") }}">mentions légales.</a> </p>
+    </div>
+
+    <script>
+        function hideMe() {
+            $("#myDiv").hide();
+        }
+        function showMe() {
+            $("#myDiv").show();
+        }
+    </script>
+{% endblock %}
+
+{% block footer %}
+    {% render(controller("AppBundle:Default:footer")) %}
+{% endblock %}
